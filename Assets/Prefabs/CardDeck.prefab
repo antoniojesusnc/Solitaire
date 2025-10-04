@@ -79,8 +79,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8104267850126977731}
-  - component: {fileID: 5910156973223791537}
   - component: {fileID: 2851472035660076139}
+  - component: {fileID: 5910156973223791537}
   m_Layer: 5
   m_Name: CardDeck
   m_TagString: Untagged
@@ -110,6 +110,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2851472035660076139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976904348897022205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8edcba7483a85094da57681473edeae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardInitialParentParent: {fileID: 8987154568238957971}
 --- !u!114 &5910156973223791537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,19 +143,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &2851472035660076139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976904348897022205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8edcba7483a85094da57681473edeae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cardInitialParentParent: {fileID: 8987154568238957971}
 --- !u!1 &6225214110659884138
 GameObject:
   m_ObjectHideFlags: 0

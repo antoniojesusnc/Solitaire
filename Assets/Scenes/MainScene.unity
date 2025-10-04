@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3866316957567633864, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
       propertyPath: m_Name
-      value: Card
+      value: Card1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3866316957567633864, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
       propertyPath: m_Name
-      value: Card
+      value: Card3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.08627451}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -990,6 +990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1475662995}
+  - component: {fileID: 1475662998}
   - component: {fileID: 1475662997}
   - component: {fileID: 1475662996}
   m_Layer: 5
@@ -1056,6 +1057,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475662994}
   m_CullTransparentMesh: 1
+--- !u!114 &1475662998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475662994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b3ebfd675363841928a54415e3b937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1484266176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1167,7 +1180,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1500856229}
-  - component: {fileID: 1500856231}
   - component: {fileID: 1500856230}
   m_Layer: 5
   m_Name: CardBoard
@@ -1227,18 +1239,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1500856231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500856228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b3ebfd675363841928a54415e3b937, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1545662651 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4608930357931552579, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
@@ -1436,7 +1436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3866316957567633864, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
       propertyPath: m_Name
-      value: Card
+      value: Card2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,20 +14,16 @@ namespace Solitaire
             _origin = origin;
             _destination = destination;
             
-            _cardController.CardRectTransform.SetParent(_destination.CardLastParent);
+            _cardController.CardRectTransform.SetParent(_destination.GetCardLastParent());
             _cardController.CardRectTransform.anchoredPosition = Vector2.zero;
-            _destination.AddCard(_cardController);
             _cardController.SetDeck(_destination);
-            _origin.RemoveCard(_cardController);
         }
 
         public override void Undo()
         {
-            _cardController.CardRectTransform.SetParent(_origin.CardLastParent);
+            _cardController.CardRectTransform.SetParent(_origin.GetCardLastParent());
             _cardController.CardRectTransform.anchoredPosition = Vector2.zero;
-            _origin.AddCard(_cardController);
             _cardController.SetDeck(_origin);
-            _destination.RemoveCard(_cardController);
         }
     }
 }

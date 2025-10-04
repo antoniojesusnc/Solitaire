@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace Solitaire
 {
-    public class CardBoard : MonoBehaviour, IDropHandler
+    public class GameBackground : MonoBehaviour, IDropHandler
     {
         public void OnDrop(PointerEventData eventData)
         {
