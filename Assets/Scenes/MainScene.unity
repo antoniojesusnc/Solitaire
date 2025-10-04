@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef25cdb46bcdcf4aaeb252717ce3db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _config: {fileID: 11400000, guid: d4e8780e40151454aaea0f9bd3a216d5, type: 2}
+  <GameplayConfig>k__BackingField: {fileID: 11400000, guid: d4e8780e40151454aaea0f9bd3a216d5, type: 2}
 --- !u!1 &1061812787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,8 +1289,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 50
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 20
+  m_ChildAlignment: 1
+  m_Spacing: 35.6
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

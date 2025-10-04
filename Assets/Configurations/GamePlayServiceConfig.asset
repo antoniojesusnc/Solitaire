@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GamePlayServiceConfig
   m_EditorClassIdentifier: 
   <DeckData>k__BackingField: {fileID: 11400000, guid: a17643a05dbfd5c44b145def4711ffe4, type: 2}
+  <CardConfig>k__BackingField: {fileID: 11400000, guid: c565c5467c8771b4098b8dc1b269632e, type: 2}

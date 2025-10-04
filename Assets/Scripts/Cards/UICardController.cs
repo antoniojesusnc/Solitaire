@@ -31,8 +31,14 @@ namespace Solitaire
         public CardModel CardModel { get; private set; }
 
         private Canvas _generalCanvas;
-
+        private CardConfig _cardConfig;
+        private Vector2 _finalDragPosition;
+        
         public UICardController uiCardChild => ChildParent.GetComponentInChildren<UICardController>();
+
+        private Vector2 _movementDelta;
+        private Vector3 _rotationDelta;
+        private bool _isDragging;
 
         private void Start()
         {
@@ -41,10 +47,40 @@ namespace Solitaire
             CardRectTransform = GetComponentInParent<RectTransform>();
             uiCardSlot = GetComponentInParent<UICardSlot>();
 
+            _cardConfig = GamePlayService.Instance.GameplayConfig.CardConfig;
             if (_cardSuitsDebug != CardSuitsTypes.None)
             {
                 SetCardModel(new CardModel(_cardNumberDebug, _cardSuitsDebug, _cardColorDebug));
             }
+        }
+
+        private void Update()
+        {
+            ApplyImageRotationWhenMove();
+            ApplyFollowCard();
+        }
+
+        private void ApplyFollowCard()
+        {
+            if (_isDragging)
+            {
+                CardRectTransform.anchoredPosition = Vector2.Lerp(CardRectTransform.anchoredPosition, _finalDragPosition, _cardConfig.FollowSpeed * Time.deltaTime);
+            }
+        }
+
+        private void ApplyImageRotationWhenMove()
+        {
+            if (!_isDragging)
+            {
+                return;
+            }
+
+            Vector2 movement = (CardRectTransform.anchoredPosition - _finalDragPosition);
+            _movementDelta = Vector2.Lerp(_movementDelta, movement, 25 * Time.deltaTime);
+            Vector2 movementRotation = (_isDragging ? _movementDelta : Vector2.zero) * _cardConfig.RotationAmount;
+            _rotationDelta = Vector3.Lerp(_rotationDelta, movementRotation, _cardConfig.RotationSpeed * Time.deltaTime);
+            _image.transform.eulerAngles = new Vector3(_image.transform.eulerAngles.x, _image.transform.eulerAngles.y, Mathf.Clamp(_rotationDelta.x, -_cardConfig.MaxRotation, _cardConfig.MaxRotation));
+            ChildParent.transform.eulerAngles = new Vector3(ChildParent.transform.eulerAngles.x, ChildParent.transform.eulerAngles.y, Mathf.Clamp(_rotationDelta.x, -_cardConfig.MaxRotation, _cardConfig.MaxRotation));
         }
 
         public void SetCardModel(CardModel cardModel)
@@ -56,6 +92,10 @@ namespace Solitaire
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            _isDragging = true;
+            _movementDelta = Vector2.zero;
+            _rotationDelta = Vector2.zero;
+            
             canvasGroup.alpha = 0.6f;
             canvasGroup.blocksRaycasts = false;
 
@@ -64,11 +104,16 @@ namespace Solitaire
         
         public void OnDrag(PointerEventData eventData)
         {
-            CardRectTransform.anchoredPosition += eventData.delta / _generalCanvas.scaleFactor;
+            _finalDragPosition = CardRectTransform.anchoredPosition + eventData.delta / _generalCanvas.scaleFactor;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            _isDragging = false;
+            
+            _image.transform.eulerAngles = Vector3.zero;
+            ChildParent.transform.eulerAngles = Vector3.zero;
+            
             canvasGroup.alpha = 1f;
             canvasGroup.blocksRaycasts = true;
 
@@ -84,7 +129,7 @@ namespace Solitaire
             for (int i = 0; i < childs.Count; i++)
             {
                 childs[i].ImageCanvas.overrideSorting = true;
-                childs[i].ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder + i;
+                childs[i].ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder + i+1;
             }
         }
         

@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da25cc67aafc32c4fa59cd5284d22825, type: 3}
-  m_Name: UndoServiceConfig
+  m_Script: {fileID: 11500000, guid: 3e5e1285edeaacd478c94f77f0429bd1, type: 3}
+  m_Name: CardConfig
   m_EditorClassIdentifier: 
-  <MaxUndos>k__BackingField: 5
+  <FollowSpeed>k__BackingField: 150
+  <RotationAmount>k__BackingField: 5
+  <RotationSpeed>k__BackingField: 5
+  <MaxRotation>k__BackingField: 10
