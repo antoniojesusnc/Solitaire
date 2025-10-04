@@ -77,7 +77,7 @@ namespace Solitaire
             }
 
             Vector2 movement = (CardRectTransform.anchoredPosition - _finalDragPosition);
-            _movementDelta = Vector2.Lerp(_movementDelta, movement, 25 * Time.deltaTime);
+            _movementDelta = Vector2.Lerp(_movementDelta, movement, _cardConfig.MovementMod * Time.deltaTime);
             Vector2 movementRotation = (_isDragging ? _movementDelta : Vector2.zero) * _cardConfig.RotationAmount;
             _rotationDelta = Vector3.Lerp(_rotationDelta, movementRotation, _cardConfig.RotationSpeed * Time.deltaTime);
             _image.transform.eulerAngles = new Vector3(_image.transform.eulerAngles.x, _image.transform.eulerAngles.y, Mathf.Clamp(_rotationDelta.x, -_cardConfig.MaxRotation, _cardConfig.MaxRotation));

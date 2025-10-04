@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CardConfig
   m_EditorClassIdentifier: 
   <FollowSpeed>k__BackingField: 150
+  <MovementMod>k__BackingField: 25
   <RotationAmount>k__BackingField: 5
   <RotationSpeed>k__BackingField: 5
   <MaxRotation>k__BackingField: 10

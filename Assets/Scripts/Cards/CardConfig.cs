@@ -9,6 +9,8 @@ namespace Solitaire
         [field: Header("Card Effects")]
         [field: SerializeField]
         public float FollowSpeed { get; private set; }
+        [field: SerializeField]
+        public float MovementMod { get; private set; }
         
         [field: Header("Rotation Parameters")]
         [field: SerializeField] public float RotationAmount { get ; private set; }
