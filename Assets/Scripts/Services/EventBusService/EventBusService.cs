@@ -221,7 +221,7 @@ namespace deVoid.Utils
     /// Strongly typed messages with 1 parameter
     /// </summary>
     /// <typeparam name="T">Parameter type</typeparam>
-    public abstract class AEventBusMessage<T>: ABaseEventBusMessage
+    public abstract class EventBusMessage<T>: ABaseEventBusMessage
     {
         private Action<T> callback;
 
@@ -264,7 +264,7 @@ namespace deVoid.Utils
     /// </summary>
     /// <typeparam name="T">First parameter type</typeparam>
     /// <typeparam name="U">Second parameter type</typeparam>
-    public abstract class AEventBusMessage<T, U>: ABaseEventBusMessage
+    public abstract class EventBusMessage<T, U>: ABaseEventBusMessage
     {
         private Action<T, U> callback;
 
@@ -308,7 +308,7 @@ namespace deVoid.Utils
     /// <typeparam name="T">First parameter type</typeparam>
     /// <typeparam name="U">Second parameter type</typeparam>
     /// <typeparam name="V">Third parameter type</typeparam>
-    public abstract class AEventBusMessage<T, U, V>: ABaseEventBusMessage
+    public abstract class EventBusMessage<T, U, V>: ABaseEventBusMessage
     {
         private Action<T, U, V> callback;
 

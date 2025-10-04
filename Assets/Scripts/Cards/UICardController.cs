@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using deVoid.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -93,11 +94,14 @@ namespace Solitaire
         public void OnBeginDrag(PointerEventData eventData)
         {
             _isDragging = true;
+            EventBusService.Instance?.GetEventMessage<OnCardBeginDraggingEvent>().Dispatch(this);
+            
             _movementDelta = Vector2.zero;
             _rotationDelta = Vector2.zero;
             
             canvasGroup.alpha = 0.6f;
             canvasGroup.blocksRaycasts = false;
+
 
             SetCardLayerToMoving();
         }
@@ -110,6 +114,7 @@ namespace Solitaire
         public void OnEndDrag(PointerEventData eventData)
         {
             _isDragging = false;
+            EventBusService.Instance?.GetEventMessage<OnCardFinishDraggingEvent>().Dispatch(this);
             
             _image.transform.eulerAngles = Vector3.zero;
             ChildParent.transform.eulerAngles = Vector3.zero;
