@@ -134,7 +134,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1900977392700242177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5590561939692960506}
+        m_TargetAssemblyTypeName: Solitaire.UIUndoButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3330236210189004486
 GameObject:
   m_ObjectHideFlags: 0

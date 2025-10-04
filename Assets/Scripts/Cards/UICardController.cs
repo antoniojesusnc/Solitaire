@@ -22,10 +22,11 @@ namespace Solitaire
         
         public RectTransform CardRectTransform { get; private set; }
         public UICardSlot uiCardSlot { get; private set; }
-
+        
         [Header("Debug Card")]
         [SerializeField] private CardSuitsTypes _cardSuitsDebug;
         [SerializeField] private int _cardNumberDebug;
+        [SerializeField] private CardColorTypes _cardColorDebug;
         
         public CardModel CardModel { get; private set; }
 
@@ -42,7 +43,7 @@ namespace Solitaire
 
             if (_cardSuitsDebug != CardSuitsTypes.None)
             {
-                SetCardModel(new CardModel(_cardNumberDebug, _cardSuitsDebug));
+                SetCardModel(new CardModel(_cardNumberDebug, _cardSuitsDebug, _cardColorDebug));
             }
         }
 
@@ -76,19 +77,23 @@ namespace Solitaire
         
         private void SetCardLayerToMoving()
         {
-            foreach (UICardController cardChild in GetChilds())
+            ImageCanvas.overrideSorting = true;
+            ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder;
+
+            var childs = GetChilds();
+            for (int i = 0; i < childs.Count; i++)
             {
-                cardChild.ImageCanvas.overrideSorting = true;
-                cardChild.ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder;
+                childs[i].ImageCanvas.overrideSorting = true;
+                childs[i].ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder + i;
             }
         }
         
         private void SetCardLayerToIdle()
         {
+            ImageCanvas.overrideSorting = false;
             foreach (UICardController cardChild in GetChilds())
             {
                 cardChild.ImageCanvas.overrideSorting = false;
-                cardChild.ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder;
             }
         }
 

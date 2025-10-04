@@ -9,7 +9,8 @@ namespace Solitaire
         [SerializeField]
         private Transform _cardInitialParentParent;
         
-        
+        [SerializeReference, SubclassSelector]
+        private ICardPlaceBehavior _cardPlaceBehavior;
         
         public void OnDrop(PointerEventData eventData)
         {
@@ -22,13 +23,23 @@ namespace Solitaire
             {
                 return;
             }
+            
+            if (!_cardPlaceBehavior.CanBePlaced(cardController.CardModel, GetLastCard()?.CardModel))
+            {
+                cardController.ResetToOriginalPosition();
+                return;
+            }
 
             var moveCommand = new MoveCardCommand(cardController, cardController.uiCardSlot, this);
             UndoService.Instance.AddCommand(moveCommand);
         }
 
-        
-        public Transform GetCardLastParent()
+        public UICardController GetLastCard()
+        {
+            var allCardsInDeck = GetAllCards();
+            return allCardsInDeck.Count <= 0 ? null : allCardsInDeck[^1];
+        }
+        public Transform GetLastCardChildParent()
         {
             var allCardsInDeck = GetAllCards();
             return allCardsInDeck.Count <= 0 ? _cardInitialParentParent : allCardsInDeck[^1].ChildParent;

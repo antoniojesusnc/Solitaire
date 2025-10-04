@@ -20,8 +20,8 @@ namespace Solitaire
 
         private void OnDestroy()
         {
-            EventBusService.Instance.GetEventMessage<OnAddUndoCommandEvent>()?.RemoveListener(UpdateButtonAvailability);
-            EventBusService.Instance.GetEventMessage<OnMakeUndoCommandEvent>()
+            EventBusService.Instance?.GetEventMessage<OnAddUndoCommandEvent>()?.RemoveListener(UpdateButtonAvailability);
+            EventBusService.Instance?.GetEventMessage<OnMakeUndoCommandEvent>()
                 ?.RemoveListener(UpdateButtonAvailability);
         }
 

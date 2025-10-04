@@ -296,6 +296,10 @@ PrefabInstance:
       value: Card1
       objectReference: {fileID: 0}
     - target: {fileID: 9048948235217466210, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
+      propertyPath: _cardColorDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048948235217466210, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
       propertyPath: _cardSuitsDebug
       value: 0
       objectReference: {fileID: 0}
@@ -407,6 +411,10 @@ PrefabInstance:
     - target: {fileID: 3866316957567633864, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
       propertyPath: m_Name
       value: Card3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048948235217466210, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
+      propertyPath: _cardColorDebug
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9048948235217466210, guid: 083d93a01fc23804c96aec92a74b3863, type: 3}
       propertyPath: _cardSuitsDebug
@@ -652,17 +660,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3353266183112638525, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
   m_PrefabInstance: {fileID: 1459770376399075455}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &774971672 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5590561939692960506, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-  m_PrefabInstance: {fileID: 1459770376399075455}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc66b897858b24b4c92366fa0fece1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &784566271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,38 +1866,6 @@ PrefabInstance:
     - target: {fileID: 3353266183112638525, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 774971672}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Click
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Solitaire.UIUndoButton, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709579344462698653, guid: 2f6d6e44e25c3e74c978d7a032c13036, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -123,6 +123,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardInitialParentParent: {fileID: 8987154568238957971}
+  _cardPlaceBehavior:
+    rid: 7340337533405626699
+  references:
+    version: 2
+    RefIds:
+    - rid: 7340337533405626699
+      type: {class: CardPlaceAnyIfEmptyOrDifferentColorAndNumberIncrease, ns: Solitaire, asm: Assembly-CSharp}
+      data: 
 --- !u!114 &5910156973223791537
 MonoBehaviour:
   m_ObjectHideFlags: 0
