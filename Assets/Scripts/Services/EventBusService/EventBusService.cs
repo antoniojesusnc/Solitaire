@@ -46,17 +46,17 @@ namespace deVoid.Utils
     {
         private static readonly EventBusHub hub = new EventBusHub();
 
-        public static SType Get<SType>() where SType : IEventButMessage, new()
+        public SType GetEventMessage<SType>() where SType : IEventButMessage, new()
         {
             return hub.Get<SType>();
         }
 
-        public static void AddListenerToHash(string signalHash, Action handler)
+        public void AddListenerToHash(string signalHash, Action handler)
         {
             hub.AddListenerToHash(signalHash, handler);
         }
 
-        public static void RemoveListenerFromHash(string signalHash, Action handler)
+        public void RemoveListenerFromHash(string signalHash, Action handler)
         {
             hub.RemoveListenerFromHash(signalHash, handler);
         }
@@ -98,9 +98,9 @@ namespace deVoid.Utils
         public void AddListenerToHash(string signalHash, Action handler)
         {
             IEventButMessage _eventButMessage = GetSignalByHash(signalHash);
-            if(_eventButMessage != null && _eventButMessage is AEventButMessage)
+            if(_eventButMessage != null && _eventButMessage is EventBusMessage)
             {
-                (_eventButMessage as AEventButMessage).AddListener(handler);
+                (_eventButMessage as EventBusMessage).AddListener(handler);
             }
         }
 
@@ -114,9 +114,9 @@ namespace deVoid.Utils
         public void RemoveListenerFromHash(string signalHash, Action handler)
         {
             IEventButMessage _eventButMessage = GetSignalByHash(signalHash);
-            if (_eventButMessage != null && _eventButMessage is AEventButMessage)
+            if (_eventButMessage != null && _eventButMessage is EventBusMessage)
             {
-                (_eventButMessage as AEventButMessage).RemoveListener(handler);
+                (_eventButMessage as EventBusMessage).RemoveListener(handler);
             }
         }
 
@@ -156,7 +156,7 @@ namespace deVoid.Utils
     /// <summary>
     /// Abstract class for Signals, provides hash by type functionality
     /// </summary>
-    public abstract class ABaseEventButMessage : IEventButMessage
+    public abstract class ABaseEventBusMessage : IEventButMessage
     {
         protected string _hash;
 
@@ -179,7 +179,7 @@ namespace deVoid.Utils
     /// <summary>
     /// Strongly typed messages with no parameters
     /// </summary>
-    public abstract class AEventButMessage : ABaseEventButMessage
+    public abstract class EventBusMessage : ABaseEventBusMessage
     {
         private Action callback;
 
@@ -221,7 +221,7 @@ namespace deVoid.Utils
     /// Strongly typed messages with 1 parameter
     /// </summary>
     /// <typeparam name="T">Parameter type</typeparam>
-    public abstract class AEventButMessage<T>: ABaseEventButMessage
+    public abstract class AEventBusMessage<T>: ABaseEventBusMessage
     {
         private Action<T> callback;
 
@@ -264,7 +264,7 @@ namespace deVoid.Utils
     /// </summary>
     /// <typeparam name="T">First parameter type</typeparam>
     /// <typeparam name="U">Second parameter type</typeparam>
-    public abstract class AEventButMessage<T, U>: ABaseEventButMessage
+    public abstract class AEventBusMessage<T, U>: ABaseEventBusMessage
     {
         private Action<T, U> callback;
 
@@ -308,7 +308,7 @@ namespace deVoid.Utils
     /// <typeparam name="T">First parameter type</typeparam>
     /// <typeparam name="U">Second parameter type</typeparam>
     /// <typeparam name="V">Third parameter type</typeparam>
-    public abstract class AEventButMessage<T, U, V>: ABaseEventButMessage
+    public abstract class AEventBusMessage<T, U, V>: ABaseEventBusMessage
     {
         private Action<T, U, V> callback;
 

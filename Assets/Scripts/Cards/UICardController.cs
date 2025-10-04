@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 namespace Solitaire
 {
-    public class CardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+    public class UICardController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
+        private const string CARD_NAME_FORMAT = "Card {0} of {1}";
+        
         [SerializeField] 
         private CanvasGroup canvasGroup;
 
@@ -19,18 +21,36 @@ namespace Solitaire
         public Transform ChildParent { get; private set; }
         
         public RectTransform CardRectTransform { get; private set; }
-        public CardDeck CardDeck { get; private set; }
+        public UICardSlot uiCardSlot { get; private set; }
+
+        [Header("Debug Card")]
+        [SerializeField] private CardSuitsTypes _cardSuitsDebug;
+        [SerializeField] private int _cardNumberDebug;
+        
+        public CardModel CardModel { get; private set; }
 
         private Canvas _generalCanvas;
 
-        public CardController CardChild => ChildParent.GetComponentInChildren<CardController>();
+        public UICardController uiCardChild => ChildParent.GetComponentInChildren<UICardController>();
 
         private void Start()
         {
             _generalCanvas = GetComponentInParent<Canvas>();
             ImageCanvas = _image.GetComponent<Canvas>();
             CardRectTransform = GetComponentInParent<RectTransform>();
-            CardDeck = GetComponentInParent<CardDeck>();
+            uiCardSlot = GetComponentInParent<UICardSlot>();
+
+            if (_cardSuitsDebug != CardSuitsTypes.None)
+            {
+                SetCardModel(new CardModel(_cardNumberDebug, _cardSuitsDebug));
+            }
+        }
+
+        public void SetCardModel(CardModel cardModel)
+        {
+            CardModel = cardModel;
+            _image.sprite = GamePlayService.Instance.GetCardImage(cardModel.Number, cardModel.Suit);
+            gameObject.name = string.Format(CARD_NAME_FORMAT, cardModel.Number, cardModel.Suit);
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -56,7 +76,7 @@ namespace Solitaire
         
         private void SetCardLayerToMoving()
         {
-            foreach (CardController cardChild in GetChilds())
+            foreach (UICardController cardChild in GetChilds())
             {
                 cardChild.ImageCanvas.overrideSorting = true;
                 cardChild.ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder;
@@ -65,28 +85,28 @@ namespace Solitaire
         
         private void SetCardLayerToIdle()
         {
-            foreach (CardController cardChild in GetChilds())
+            foreach (UICardController cardChild in GetChilds())
             {
                 cardChild.ImageCanvas.overrideSorting = false;
                 cardChild.ImageCanvas.sortingOrder = UISortingOrder.CardMovingSortingOrder;
             }
         }
 
-        public void SetDeck(CardDeck cardDeck)
+        public void SetDeck(UICardSlot uiCardSlot)
         {
-            CardDeck = cardDeck;
+            this.uiCardSlot = uiCardSlot;
         }
 
-        public List<CardController> GetChilds()
+        public List<UICardController> GetChilds()
         {
-            List<CardController> childs = new List<CardController>();
-            if (CardChild == null)
+            List<UICardController> childs = new List<UICardController>();
+            if (uiCardChild == null)
             {
                 return childs;
             }
 
-            childs.Add(CardChild);
-            childs.AddRange(CardChild.GetChilds());
+            childs.Add(uiCardChild);
+            childs.AddRange(uiCardChild.GetChilds());
             return childs;
         }
 

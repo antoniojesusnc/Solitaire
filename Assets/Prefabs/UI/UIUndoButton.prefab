@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc66b897858b24b4c92366fa0fece1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonBackgronud: {fileID: 1900977392700242177}
+  _button: {fileID: 8709579344462698653}
 --- !u!222 &3014893074054079465
 CanvasRenderer:
   m_ObjectHideFlags: 0

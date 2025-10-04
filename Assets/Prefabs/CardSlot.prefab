@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 2851472035660076139}
   - component: {fileID: 5910156973223791537}
   m_Layer: 5
-  m_Name: CardDeck
+  m_Name: CardSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

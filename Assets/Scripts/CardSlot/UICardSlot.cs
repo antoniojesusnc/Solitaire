@@ -4,27 +4,26 @@ using UnityEngine.EventSystems;
 
 namespace Solitaire
 {
-    public class CardDeck : MonoBehaviour, IDropHandler
+    public class UICardSlot : MonoBehaviour, IDropHandler
     {
         [SerializeField]
         private Transform _cardInitialParentParent;
         
-
-
+        
+        
         public void OnDrop(PointerEventData eventData)
         {
-            // Verificamos si lo que arrastramos tiene la carta
             if (eventData.pointerDrag == null)
             {
                 return;
             }
 
-            if (!eventData.pointerDrag.TryGetComponent<CardController>(out var cardController))
+            if (!eventData.pointerDrag.TryGetComponent<UICardController>(out var cardController))
             {
                 return;
             }
 
-            var moveCommand = new MoveCardCommand(cardController, cardController.CardDeck, this);
+            var moveCommand = new MoveCardCommand(cardController, cardController.uiCardSlot, this);
             UndoService.Instance.AddCommand(moveCommand);
         }
 
@@ -35,11 +34,11 @@ namespace Solitaire
             return allCardsInDeck.Count <= 0 ? _cardInitialParentParent : allCardsInDeck[^1].ChildParent;
         }
 
-        private List<CardController> GetAllCards()
+        private List<UICardController> GetAllCards()
         {
-            var allCards = new List<CardController>();
+            var allCards = new List<UICardController>();
             
-            var cardController = GetComponentInChildren<CardController>();
+            var cardController = GetComponentInChildren<UICardController>();
             if (cardController == null)
             {
                 return allCards;

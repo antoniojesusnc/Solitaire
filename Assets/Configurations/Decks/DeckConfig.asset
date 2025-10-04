@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c601dc84097d4d91fce100bc4dae3, type: 3}
+  m_Name: DeckConfig
+  m_EditorClassIdentifier: 
+  <CardConfigs>k__BackingField:
+  - <Suit>k__BackingField: 0
+    <Color>k__BackingField: 1
+    <CardsImagesByOrder>k__BackingField:
+    - {fileID: -5292548653899752163, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -998836864669141298, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 1663512143266718322, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 8839426945379861921, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 4858287886207238977, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -8594759960888703688, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -1514602399332301090, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 9042689222623775469, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -1409063187734301080, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 6103102951399720531, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 5304571520759941730, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 8586966143509866286, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 8965177209896154661, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+  - <Suit>k__BackingField: 1
+    <Color>k__BackingField: 0
+    <CardsImagesByOrder>k__BackingField:
+    - {fileID: -4247881032163273741, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 1147690271237168053, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -8830078854869806030, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -5435782500468944116, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -268655700130000721, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 8978651120857448107, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 690550335686789633, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -6779773949711239829, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -8721357495407768152, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 1532698555627000778, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -8896163021203543304, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -3762481195810082074, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -3509779297268494456, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+  - <Suit>k__BackingField: 2
+    <Color>k__BackingField: 0
+    <CardsImagesByOrder>k__BackingField:
+    - {fileID: -8048895910305697639, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -8164444644208446356, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 2420305902561914034, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 5235389953327522893, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 5596713363464713251, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 2850105553570827413, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 1885635259527999804, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -5365006232424587627, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -7313167023206581623, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -3550641934401580965, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -2451533338704949536, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 764698681505137740, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 5312793010095352188, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+  - <Suit>k__BackingField: 3
+    <Color>k__BackingField: 1
+    <CardsImagesByOrder>k__BackingField:
+    - {fileID: -7337467765609386867, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 7706489809641449678, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 30711029738617771, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 3281918778603888993, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 6992080574930506228, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -8783943198347737237, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -7378031574675997379, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 6134718601778010642, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 9125678570919549951, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 3851790902005288735, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -2774921026600867562, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: -4299873951023941566, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}
+    - {fileID: 3740904293736456983, guid: 6e79f6ea25827724badea5d06c1bc1c8, type: 3}

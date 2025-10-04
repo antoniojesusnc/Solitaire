@@ -13,7 +13,7 @@ namespace Solitaire
                 return;
             }
 
-            if (!eventData.pointerDrag.TryGetComponent<CardController>(out var cardController))
+            if (!eventData.pointerDrag.TryGetComponent<UICardController>(out var cardController))
             {
                 return;
             }

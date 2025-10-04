@@ -207,6 +207,8 @@ MonoBehaviour:
   _image: {fileID: 5121377669556519305}
   <ImageCanvas>k__BackingField: {fileID: 7300951511687392617}
   <ChildParent>k__BackingField: {fileID: 4608930357931552579}
+  _cardSuitsDebug: -1
+  _cardNumber: 0
 --- !u!225 &8852493588827698028
 CanvasGroup:
   m_ObjectHideFlags: 0

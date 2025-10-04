@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using deVoid.Utils;
 using Solitaire.Utils;
 using UnityEngine;
 
@@ -10,11 +11,13 @@ namespace Solitaire
         private UndoServiceConfig _undoConfig;
         
         private List<ICommand> _lastCommands = new ();
+        public bool IsUndoAvailable => _lastCommands.Count > 0;
 
         public void AddCommand(MoveCardCommand newCommand)
         {
             _lastCommands.Add(newCommand);
             CapUndo();
+            EventBusService.Instance.GetEventMessage<OnAddUndoCommandEvent>().Dispatch();
         }
 
         private void CapUndo()
@@ -29,6 +32,7 @@ namespace Solitaire
         { 
             _lastCommands[^1].Undo();
             _lastCommands.RemoveAt(_lastCommands.Count - 1);
+            EventBusService.Instance.GetEventMessage<OnMakeUndoCommandEvent>().Dispatch();
         }
     }
 }
