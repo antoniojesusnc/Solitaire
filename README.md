@@ -8,8 +8,8 @@ clearly within a limited time frame.
 ## Task
 Create a Unity prototype of the following feature: "Undo Move" System
 Implement a basic undo system that lets the player revert their last move in a simplified Solitaire
-setting. You don’t need to recreate full Solitaire — just a minimal card movement setup (e.g.,
-dragging cards between 2–3 stacks).
+Setting. You don’t need to recreate full Solitaire — just a minimal card movement setup (e.g.,
+dragging cards between 2–3 stacks.
 
 ## Requirements:
 - Show movement between stacks with drag-and-drop or click
@@ -23,24 +23,24 @@ dragging cards between 2–3 stacks).
 
 ## General Explanation:
 
-For the test, I created a solitaire card movement between slots. I also added a check to be able to know if a movement is possible, based on an interface and a class. 
+For the test, I created a solitaire card movement between slots. I also added a check to determine if a movement is possible, based on an interface and a class. 
 For the Undo movement, I use a command system to be able to add any movement or operation that happens in the game, being able to undo if required. 
 I divide the important part of the game into Services, but for now, there are only two of them, GameplayService and UndoService.
 
 ### Scheduled steps by steps:
 1. First of all, I check the assessment and create the project and all the necessary to begin to work: 0:30 aprox
-2. I added the art and basic card movement into the game: 1:00 approx
-3. I began with the undo movement and behavior using the commands approximately 1:00.
-4. Improved the card placement and settled the placement logic. 0:45 apxox.
-5. Improved the animations when the card is moving. 1:00 aprox
-6. Play and some small bug fixes. 0:30 aprox
-7. Create the Readme file. 0:30 aprox.
+2. I added the art and basic card movement into the game: 1:00 approx.
+3. I began with the undo movement and behavior using the commands. 1:00 approx.
+4. Improved the card placement and settled the placement logic. 0:45 approx.
+5. Improved the animations when the card is moving. 1:00 approx
+6. Play and some small bug fixes. 0:30 approx
+7. Create the Readme file. 0:30 approx.
 
 Total time: 5:15 approximately.
 
 ## How it works:
 #### Cards:
-The card's movement is handled by the UICardController. It handles that a card is being dragged and dropped using the interfaces IBeginDragHandler, IDragHandler, IEndDragHandler
+The card's movement is handled by the UICardController. It handles that a card is being dragged and dropped using the interfaces IBeginDragHandler, IDragHandler, and IEndDragHandler
 The cards had the knowledge of his children, allowing to have a card hierarchy.
 
 #### Cards Slots:
